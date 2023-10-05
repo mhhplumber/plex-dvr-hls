@@ -1,12 +1,11 @@
-version: '3.7'
+---
+version: '3.9'
 
 services:
-  app:
-    build:
-      dockerfile: './Dockerfile'
-      context: '.'
+  plex-svr-hls:
+    image: ghcr.io/mhhplumber/plex-dvr-hls:1.1
+    container_name: plex-dvr-hls
     volumes:
-      - './config.json:/app/config.json'
-      - './channels.json:/app/channels.json'
+      - /home/plex-dvr-hls:/config
     ports:
-      - '5004:5004'
+      - 5004:5004
