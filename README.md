@@ -26,7 +26,6 @@ services:
       - 5004:5004 # API Port
     restart: unless-stopped
 ```
-1. Add the server to the Plex DVR e.g. `http://<ip of machine>:5004`. When prompted for an Electronic Program Guide, you can either use one if it's available, or use the auto-generated one by entering `http://<ip of machine>:5004/xmltv`
 
 #### CLI
 ```
@@ -44,7 +43,7 @@ docker create \
 ### Configuration
 The first time you run this container you will notice that `config.json` and `channels.json` files have been placed at the mount point of your config directory.
 
-#### config.yaml
+#### config.json
 Your initial `config.json` should resemble this:
 ```
 {
@@ -55,7 +54,7 @@ Your initial `config.json` should resemble this:
 * `name` The name of your tuner - this is the name Plex will discover it as
 * `encoder_profile` This is the encoder profile ffmpeg will use. Available options are are `vaapi`, `video_toolbox`, `omx` and `cpu`
 
-#### channels.yaml
+#### channels.json
 Your initial `channels.json` should resemble this:
 ```
 [
@@ -77,6 +76,8 @@ Your initial `channels.json` should resemble this:
 * `name` The channel name as you wish for it to appear.
 * `url` The URL of the stream. Most times this will include `.m3u8` followed by 0 or more additional arguments
 
+To add channels, all you need to do is add another entry to the list.
+
 ##### Proxy Settings
 Some streams are geolocked or otherwise require use of a proxy in order to consume.
 A proxy may be added to any channel as below:
@@ -94,3 +95,19 @@ A proxy may be added to any channel as below:
 * `host` the proxy host
 * `username` your username for accessing the proxy
 * `password` your password for accessing the proxy
+
+### Connecting with Plex (as of Plex Version 4.108.0)
+1. Navigate to `Settings>Manage>Live TV & DVR`
+1. Select the "Set Up Plex DVR" (if you already have a tuner box or dvr connected select "Add Another Device")
+1. If Plex automatically finds your device, select it and skip to step 6
+1. If Plex does not automatically find your device, select "Don't see your HDHomeRun device? Enter its network address manually"
+1. Enter the ip/hostname and port of your device `http://<ip of machine>:5004` and hit "Connect"
+1. Plex should have found your device, but before you can proceed to the next step a channel guide must be added. **unless you have only added local channels/streams, do not add your postal code. It will not work**
+1. Select "Have an XMLTV guide on your server? Click here to use it."
+1. In the "XMLTV GUIDE" box, enter the ip/hostname and port of your device followed by /xmltv: `http://<ip of machine>:5004/xmltv`
+1. You may change the guide title if you wish
+1. Select "Continue"
+1. Validate that channels match the guide
+1. Select Continue
+Setup is now complete
+
