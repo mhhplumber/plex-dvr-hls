@@ -1,7 +1,6 @@
 FROM ghcr.io/jrottenberg/ffmpeg/4.4.1-alpine313:latest as build-stage
 FROM golang:1.21.1-alpine
 
-# Copy ffmpeg runtime https://github.com/denismakogon/ffmpeg-alpine#custom-runtime
 COPY --from=build-stage /usr/local/bin /usr/local/bin
 COPY --from=build-stage /usr/local/share /usr/local/share
 COPY --from=build-stage /usr/local/include /usr/local/include

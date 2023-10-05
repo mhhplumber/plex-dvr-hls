@@ -24,7 +24,7 @@ var (
 )
 
 func init() {
-	file, err := os.Open("channels.json")
+	file, err := os.Open("/config/channels.json")
 	if err != nil {
 		log.Fatal(err)
 	}
