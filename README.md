@@ -63,13 +63,8 @@ Your initial `channels.json` should resemble this:
     "url": "https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8"
   },
   {
-    "name": "PGA Tour on CBS",
-    "url": "http://cbssportsliveios-i.akamaihd.net/hls/live/207523/pgatour_simulcast/desktop.m3u8",
-    "proxy": {
-      "host": "proxy.somewhere.com:3128",
-      "username": "",
-      "password": ""
-    }
+    "name": "Al Jazeera English",
+    "url": "http://aljazeera-eng-hd-live.hls.adaptive.level3.net/aljazeera/english2/index.m3u8"
   }
 ]
 ```
@@ -104,10 +99,10 @@ A proxy may be added to any channel as below:
 1. Enter the ip/hostname and port of your device `http://<ip of machine>:5004` and hit "Connect"
 1. Plex should have found your device, but before you can proceed to the next step a channel guide must be added. **unless you have only added local channels/streams, do not add your postal code. It will not work**
 1. Select "Have an XMLTV guide on your server? Click here to use it."
-1. In the "XMLTV GUIDE" box, enter the ip/hostname and port of your device followed by /xmltv: `http://<ip of machine>:5004/xmltv`
-1. You may change the guide title if you wish
+1. In the "XMLTV GUIDE" box, enter the ip/hostname and port of your device followed by /xmltv: `http://<ip of machine>:5004/xmltv` You may change the guide title if you wish
 1. Select "Continue"
 1. Validate that channels match the guide
-1. Select Continue
+1. Select "Continue"
+
 Setup is now complete
 
