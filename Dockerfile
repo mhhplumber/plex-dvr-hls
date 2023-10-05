@@ -15,4 +15,4 @@ RUN go mod download
 COPY . .
 
 CMD ["go", "run", "cmd/main.go"]
-VOLUME [/config/]
+VOLUME [/config]
