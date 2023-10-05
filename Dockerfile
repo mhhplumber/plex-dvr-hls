@@ -13,7 +13,7 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
-COPY config.example.json /config
-COPY channels.example.json /config
+COPY config.example.json /config/
+COPY channels.example.json /config/
 
 CMD ["go", "run", "cmd/main.go"]

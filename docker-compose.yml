@@ -3,7 +3,7 @@ version: '3.9'
 
 services:
   plex-svr-hls:
-    image: ghcr.io/mhhplumber/plex-dvr-hls:1.1
+    image: ghcr.io/mhhplumber/plex-dvr-hls:latest
     container_name: plex-dvr-hls
     volumes:
       - /home/plex-dvr-hls:/config
