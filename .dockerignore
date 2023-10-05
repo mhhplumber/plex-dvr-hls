@@ -3,5 +3,4 @@
 .github
 README.md
 LICENSE
-*.example.json
 docker-compose.yml
