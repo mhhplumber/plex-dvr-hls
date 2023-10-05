@@ -6,8 +6,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/duncanleo/plex-dvr-hls/config"
-	"github.com/duncanleo/plex-dvr-hls/routes"
+	"github.com/mhhplumber/plex-dvr-hls/config"
+	"github.com/mhhplumber/plex-dvr-hls/routes"
 	"github.com/gin-gonic/gin"
 )
 
