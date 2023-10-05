@@ -1,6 +1,6 @@
 FROM golang:1.21.1-alpine
 
-RUN apk update && apk add --no-cache ffmpeg openssl1.1-compat-dev
+RUN apk update && apk add --no-cache ffmpeg openssl1.1-compat-dev tzdata
 
 WORKDIR /app
 COPY go.mod .
