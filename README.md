@@ -70,6 +70,7 @@ Your initial `channels.json` should resemble this:
 ```
 * `name` The channel name as you wish for it to appear.
 * `url` The URL of the stream. Most times this will include `.m3u8` followed by 0 or more additional arguments
+* `disableTranscode` Optional. Default:`false`
 
 To add channels, all you need to do is add another entry to the list.
 
